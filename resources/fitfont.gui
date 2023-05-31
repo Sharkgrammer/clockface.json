@@ -1,0 +1,9 @@
+<defs>
+  <!-- The symbol for a character -->
+  <symbol id="fitfont-char">
+    <image class="fitfont-char" load="sync" x="0" y="0"/>
+  </symbol>
+  
+  <!-- The custom font symbol -->
+  <symbol id="fitfont" />
+</defs>
