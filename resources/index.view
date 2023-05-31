@@ -1,57 +1,22 @@
 <svg id="screen" pointer-events="visible">
 
-    <!-- DEFS -->
-    <defs>
-        <symbol id="tabBackground">
-            <rect x='2%' y='20%' width='96%' height='84%' class="TPaneItem"/>
-
-            <rect x='2%' y='20%' width='14' height='14' fill='#212124'/>
-            <circle r='14' cx='2%+14' cy='20%+14' class="TPaneItem"/>
-
-            <rect x='98%-15' y='20%' width='14' height='14' fill='#212124'/>
-            <circle r='14' cx='98%-15' cy='20%+14' class="TPaneItem"/>
-        </symbol>
-    </defs>
 
     <section id="TPane">
-        <rect id="TPaneBackground">
-
-            <section id="TPaneItem1">
-                <use href="#tabBackground"/>
-            </section>
-
-            <section id="TPaneItem2">
-                <use href="#tabBackground"/>
-            </section>
-
-            <section id="TPaneItem3">
-                <use href="#tabBackground"/>
-            </section>
-
-
-            <!--
-            <rect id="TPaneItem1" class="TPaneItem"/>
-            <rect id="TPaneItem2" class="TPaneItem"/>
-            <rect id="TPaneItem3" class="TPaneItem"/>
-            -->
+        <rect id="TPaneItem">
+            <text id="TPaneText" class="displayText">clockface.json</text>
+            <image id="TPaneCross" href="images/cross.png"/>
         </rect>
-
-    </section>
-
-    <section id="LPane">
-        <rect id="LPaneBackground"/>
-
     </section>
 
     <section id="CPane">
-        <rect id="CPaneBackground">
+        <rect id="CPaneBackground"/>
 
-            <section id="datetime">
-                <text id="timeElem" class="displayText"/>
-                <text id="dateElem" class="displayText"/>
-            </section>
 
-        </rect>
+        <section id="datetime">
+            <text id="timeElem" class="displayText"/>
+            <text id="dateElem" class="displayText"/>
+        </section>
+
     </section>
 
 </svg>
