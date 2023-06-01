@@ -7,16 +7,16 @@
 /*noinspection ALL*/
 #TPane{
   x: 0%;
-  y: 7%;
-  width: 86%;
-  height: 12%;
+  y: 0%;
+  width: 97%;
+  height: 13%;
 }
 
 /*noinspection ALL*/
 #TPaneItem{
   fill: #1e1e1e;
   x: 0%;
-  y: 0%;
+  y: 2%;
   width: 50%;
   height: 100%;
 }
@@ -40,9 +40,9 @@
 /*noinspection ALL*/
 #CPane{
   x: 0%;
-  y: 19%;
+  y: 10%;
   width: 100%;
-  height: 81%;
+  height: 90%;
 }
 
 /*noinspection ALL*/
@@ -66,7 +66,7 @@
   font-family: System-Bold;
   text-length: 2;
   fill: #626269;
-  font-size: 18;
+  font-size: 20;
   text-anchor: end;
 }
 
@@ -77,7 +77,7 @@
 }
 
 /*noinspection ALL*/
-.CPaneCodeWhite {
+.CPaneCodeWhiteBrace {
   font-family: System-Bold;
   text-length: 2;
   fill: white;
@@ -86,11 +86,11 @@
 }
 
 /*noinspection ALL*/
-.CPaneCodeWhiteBrace {
+.CPaneCodeWhite {
   font-family: System-Bold;
   text-length: 2;
   fill: white;
-  font-size: 16;
+  font-size: 21;
   text-anchor: start;
 }
 
@@ -99,7 +99,7 @@
   font-family: System-Bold;
   text-length: 15;
   fill: #9cdcfe;
-  font-size: 18;
+  font-size: 21;
   text-anchor: start;
 }
 
@@ -108,9 +108,10 @@
   font-family: System-Bold;
   text-length: 20;
   fill: #ce9178;
-  font-size: 18;
+  font-size: 21;
   text-anchor: start;
 }
+
 
 /*noinspection ALL*/
 #datetime{
@@ -128,4 +129,3 @@
 .hidden {
   visibility: hidden;
 }
-

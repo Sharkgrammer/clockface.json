@@ -6,44 +6,59 @@ import * as hrm from "./simple/hrm";
 /**
  * Datetime code
  */
-
-//const timeElem  = new FitFont({ id:'timeElem',  font:'Share_Tech_Mono_90',  halign: 'middle'})
-//const dateElem  = new FitFont({ id:'dateElem',  font:'Share_Tech_Mono_30',  halign: 'middle'})
-
 const timeElem = document.getElementById("timeElem");
-const dateElem = document.getElementById("dateElem");
 const timeComma = document.getElementById("timeComma");
+const timeText = document.getElementById("timeText");
+
+const dateElem = document.getElementById("dateElem");
 const dateComma = document.getElementById("dateComma");
-const screen = document.getElementById('screen');
-const batteryText = document.getElementById("batteryText");
+const dateText = document.getElementById("dateText");
+
+const batteryElem = document.getElementById("batteryElem");
 
 function clockCallback(data) {
     timeElem.text = `"${data.time}"`;
-    //  timeElem.width = (data.time.length + 2) * 10;
-
     dateElem.text = `"${data.date.toLowerCase()}"`;
-    batteryText.text = `"${data.power.battery}%"`;
-    // dateElem.width = (data.date.length + 2) * 10;
+    batteryElem.text = `"${data.power.battery}%"`;
 
-    // Sigh
-    //   dateComma.x = (screen.width * 0.10) + dateElem.width;
-    // timeComma.x = (screen.width * 0.16) + timeElem.width;
+    dateComma.x = dateText.getBBox().width + dateElem.getBBox().width + 10;
+    timeComma.x = timeText.getBBox().width + timeElem.getBBox().width + 10;
 }
 
 clock.initialize("minutes", "shortDate", clockCallback);
 
+const stepsElem = document.getElementById("stepsElem");
+const stepsComma = document.getElementById("stepsComma");
 const stepsText = document.getElementById("stepsText");
+
+const distanceElem = document.getElementById("distanceElem");
+const distanceComma = document.getElementById("distanceComma");
 const distanceText = document.getElementById("distanceText");
+
+const AZMElem = document.getElementById("AZMElem");
+const AZMComma = document.getElementById("AZMComma");
 const AZMText = document.getElementById("AZMText");
-const caloriesText = document.getElementById("caloriesText");
+
+const floorsElem = document.getElementById("floorsElem");
+const floorsComma = document.getElementById("floorsComma");
 const floorsText = document.getElementById("floorsText");
 
+const caloriesElem = document.getElementById("caloriesElem");
+
 function activityCallback(data) {
-    stepsText.text = `"${data.steps.pretty}"`;
-    distanceText.text = `"${data.distance.pretty}"`;
-    AZMText.text = `"${data.activeMinutes.pretty}"`;
-    caloriesText.text = `"${data.calories.pretty}"`;
-    floorsText.text = `"${data.elevationGain.pretty}"`;
+    stepsElem.text = `"${data.steps.pretty}"`;
+    stepsComma.x = stepsText.getBBox().width + stepsElem.getBBox().width + 10;
+
+    distanceElem.text = `"${data.distance.pretty}"`;
+    distanceComma.x = distanceText.getBBox().width + distanceElem.getBBox().width + 10;
+
+    AZMElem.text = `"${data.activeMinutes.pretty}"`;
+    AZMComma.x = AZMText.getBBox().width + AZMElem.getBBox().width + 10;
+
+    floorsElem.text = `"${data.elevationGain.pretty}"`;
+    floorsComma.x = floorsText.getBBox().width + floorsElem.getBBox().width + 10;
+
+    caloriesElem.text = `"${data.calories.pretty}"`;
 }
 
 activity.initialize("seconds", activityCallback);
@@ -53,12 +68,15 @@ activity.initialize("seconds", activityCallback);
  * Gets your current hr.
  */
 
+const heartElem = document.getElementById("heartElem");
+const heartComma = document.getElementById("heartComma");
 const heartText = document.getElementById("heartText");
-
 function hrmCallback(data) {
     let hr = data.bpm;
     if (hr === null) hr = "--";
-    if (heartText !== null) heartText.text = `"${hr}"`;
+    if (heartElem !== null) heartElem.text = `"${hr}"`;
+
+    heartComma.x = heartText.getBBox().width + heartElem.getBBox().width + 10;
 }
 
 hrm.initialize(hrmCallback);
