@@ -4,18 +4,10 @@
 */
 import {me} from "appbit";
 import clock from "clock";
-import {today, goals, primaryGoal} from "user-activity";
+import {today} from "user-activity";
 import {units} from "user-settings";
 
 let activityCallback;
-
-export function getPrimaryGoal() {
-    if (me.permissions.granted("access_activity")) {
-        return primaryGoal;
-    } else {
-        return "steps";
-    }
-}
 
 export function initialize(granularity, callback) {
     if (me.permissions.granted("access_activity")) {
@@ -54,7 +46,6 @@ function getActiveMinutes() {
     return {
         raw: val,
         pretty: (val < 60 ? "" : Math.floor(val / 60) + "h,") + ("0" + (val % 60)).slice("-2"),
-        goal: goals.activeZoneMinutes.total
     }
 }
 
@@ -63,7 +54,6 @@ function getCalories() {
     return {
         raw: val,
         pretty: val > 999 ? Math.floor(val / 1000) + "," + ("00" + (val % 1000)).slice(-3) : val,
-        goal: goals.calories
     }
 }
 
@@ -78,7 +68,6 @@ function getDistance() {
     return {
         raw: val,
         pretty: `${val.toFixed(2)}${u}`,
-        goal: goals.distance
     }
 }
 
@@ -87,7 +76,6 @@ function getElevationGain() {
     return {
         raw: val,
         pretty: `${val}`,
-        goal: goals.elevationGain
     }
 }
 
@@ -96,7 +84,6 @@ function getSteps() {
     return {
         raw: val,
         pretty: val > 999 ? Math.floor(val / 1000) + "," + ("00" + (val % 1000)).slice(-3) : val,
-        goal: goals.steps
     }
 }
 
