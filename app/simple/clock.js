@@ -7,6 +7,7 @@ import { preferences } from "user-settings";
 
 import { days, monthsShort } from "./locales/en.js";
 import * as util from "./utils";
+import { battery } from "power";
 
 let dateFormat, clockCallback;
 
@@ -36,11 +37,15 @@ function tickHandler(evt) {
   let timeString = `${hours}:${mins}`;
   let dateString = `${dayName}, ${dayPostfix(dayNumber)} ${monthNameShort}`;
 
-  clockCallback({time: timeString, date: dateString, today: today});
+  // Use the power api to get battery level
+  let batNum = Math.floor(battery.chargeLevel);
+  let power = {battery: batNum};
+
+  clockCallback({time: timeString, date: dateString, power: power});
 }
 
 function dayPostfix(day) {
-  let tempDay = day;
+  let tempDay = Number(day);
   let postFix;
 
   while (tempDay > 10) {
@@ -62,5 +67,5 @@ function dayPostfix(day) {
       break;
   }
 
-  return `${day}${postFix}`
+  return `${tempDay}${postFix}`
 }

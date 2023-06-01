@@ -23,10 +23,10 @@
 
 /*noinspection ALL*/
 #TPaneText {
-  font-size: 14;
+  font-size: 16;
   text-anchor: end;
   x: 42%;
-  y: 50%+7;
+  y: 50%+8;
 }
 
 /*noinspection ALL*/
@@ -55,25 +55,67 @@
 }
 
 /*noinspection ALL*/
+#CPaneNumberPanel {
+  x: 17%;
+  y: 8%;
+}
+
+/*noinspection ALL*/
+.CPaneNumber {
+  x: 0%;
+  font-family: System-Bold;
+  text-length: 2;
+  fill: #626269;
+  font-size: 18;
+  text-anchor: end;
+}
+
+/*noinspection ALL*/
+#CPaneCodePanel {
+  x: 21%;
+  y: 8%;
+}
+
+/*noinspection ALL*/
+.CPaneCodeWhite {
+  font-family: System-Bold;
+  text-length: 2;
+  fill: white;
+  font-size: 18;
+  text-anchor: start;
+}
+
+/*noinspection ALL*/
+.CPaneCodeWhiteBrace {
+  font-family: System-Bold;
+  text-length: 2;
+  fill: white;
+  font-size: 16;
+  text-anchor: start;
+}
+
+/*noinspection ALL*/
+.CPaneCodeBlue {
+  font-family: System-Bold;
+  text-length: 15;
+  fill: #9cdcfe;
+  font-size: 18;
+  text-anchor: start;
+}
+
+/*noinspection ALL*/
+.CPaneCodeOrange {
+  font-family: System-Bold;
+  text-length: 20;
+  fill: #ce9178;
+  font-size: 18;
+  text-anchor: start;
+}
+
+/*noinspection ALL*/
 #datetime{
-  x: 10%;
+  x: 30%;
   y: 60%;
-}
-
-/*noinspection ALL*/
-#timeElem {
-  font-size: 70;
-  text-anchor: start;
-  x: 0%;
-  y: 0%;
-}
-
-/*noinspection ALL*/
-#dateElem {
-  font-size: 25;
-  text-anchor: start;
-  x: 0%;
-  y: -25%;
 }
 
 /*noinspection ALL*/

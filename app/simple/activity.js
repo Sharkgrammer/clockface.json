@@ -77,7 +77,7 @@ function getDistance() {
 
     return {
         raw: val,
-        pretty: `${val.toFixed(2)}`,
+        pretty: `${val.toFixed(2)}${u}`,
         goal: goals.distance
     }
 }
