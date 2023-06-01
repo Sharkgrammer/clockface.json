@@ -10,7 +10,7 @@
   "fitbit": {
     "appUUID": "74a1aee7-457c-441e-9e93-ed17a18b01df",
     "appType": "clockface",
-    "appDisplayName": "Devclock",
+    "appDisplayName": "clockface.json",
     "iconFile": "resources/icon.png",
     "wipeColor": "#ffffff",
     "requestedPermissions": [
