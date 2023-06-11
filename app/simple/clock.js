@@ -48,24 +48,28 @@ function dayPostfix(day) {
   let tempDay = Number(day);
   let postFix;
 
-  while (tempDay > 10) {
-    tempDay -= 10;
+  if (tempDay > 10 && tempDay < 20) {
+    postFix = "th";
+  } else {
+    while (tempDay > 10) {
+      tempDay -= 10;
+    }
+
+    switch (tempDay) {
+      case 1:
+        postFix = "st";
+        break;
+      case 2:
+        postFix = "nd";
+        break;
+      case 3:
+        postFix = "rd";
+        break;
+      default:
+        postFix = "th";
+        break;
+    }
   }
 
-  switch (tempDay) {
-    case 1:
-      postFix = "st";
-      break;
-    case 2:
-      postFix = "nd";
-      break;
-    case 3:
-      postFix = "rd";
-      break;
-    default:
-      postFix = "th";
-      break;
-  }
-
-  return `${tempDay}${postFix}`
+  return `${Number(day)}${postFix}`
 }
