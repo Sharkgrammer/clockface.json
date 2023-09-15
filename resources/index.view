@@ -3,7 +3,7 @@
 
     <section id="TPane">
         <rect id="TPaneItem">
-            <text id="TPaneText" class="displayText">clockface.json</text>
+            <text id="TPaneText" class="displayText" />
             <image id="TPaneCross" href="images/cross.png"/>
         </rect>
     </section>
@@ -11,102 +11,162 @@
     <section id="CPane">
         <rect id="CPaneBackground"/>
 
-        <section id="CPaneNumberPanel">
-            <text class="CPaneNumber" y="0%">1</text>
-            <text class="CPaneNumber" y="7%">2</text>
-            <text class="CPaneNumber" y="14%">3</text>
-            <text class="CPaneNumber" y="21%">4</text>
-            <text class="CPaneNumber" y="28%">5</text>
-            <text class="CPaneNumber" y="35%">6</text>
-            <text class="CPaneNumber" y="42%">7</text>
-            <text class="CPaneNumber" y="49%">8</text>
-            <text class="CPaneNumber" y="56%">9</text>
-            <text class="CPaneNumber" y="63%">10</text>
-            <text class="CPaneNumber" y="70%">11</text>
-            <text class="CPaneNumber" y="77%">12</text>
-            <text class="CPaneNumber" y="84%">13</text>
-        </section>
+        <g id="CPaneCore">
 
-        <section id="CPaneCodePanel">
-            <text class="CPaneCodeWhiteBrace" y="0%" x="0%">{</text>
-            <section y="7%" x="4%">
-                <text class="CPaneCodeBlue" y="0%" x="0%" id="dateText">"date"</text>
-                <text class="CPaneCodeWhite" y="0%" x="16%+3">:</text>
-                <text class="CPaneCodeOrange" y="0%" x="16%+13" id="dateElem"/>
-                <text class="CPaneCodeWhite" y="0%" id="dateComma">,</text>
+
+            <section id="CPaneNumberPanel">
+                <text class="CPaneNumber" y="0%">1</text>
+                <text class="CPaneNumber" y="7%">2</text>
+                <text class="CPaneNumber" y="14%">3</text>
+                <text class="CPaneNumber" y="21%">4</text>
+                <text class="CPaneNumber" y="28%">5</text>
+                <text class="CPaneNumber" y="35%">6</text>
+                <text class="CPaneNumber" y="42%">7</text>
+                <text class="CPaneNumber" y="49%">8</text>
+                <text class="CPaneNumber" y="56%">9</text>
+                <text class="CPaneNumber" y="63%">10</text>
+                <text class="CPaneNumber" y="70%">11</text>
+                <text class="CPaneNumber" y="77%">12</text>
+                <text class="CPaneNumber" y="84%">13</text>
             </section>
 
-            <section y="14%" x="4%">
-                <text class="CPaneCodeBlue" y="0%" x="0%" id="timeText">"time"</text>
-                <text class="CPaneCodeWhite" y="0%" x="16%+3">:</text>
-                <text class="CPaneCodeOrange" y="0%" x="16%+13" id="timeElem"/>
-                <text class="CPaneCodeWhite" y="0%" id="timeComma">,</text>
+            <section id="CPaneCodePanel">
+                <text class="CPaneCodeWhiteBrace" y="0%" x="0%">{</text>
+
+                <section y="7%" x="4%">
+                    <text class="CPaneCodeBlue" y="0%" x="0%" id="dateText">"date"</text>
+                    <text class="CPaneCodeWhite" y="0%" x="16%+3">:</text>
+                    <text class="CPaneCodeOrange" y="0%" x="16%+13" id="dateElem"/>
+                    <text class="CPaneCodeWhite" y="0%" id="dateComma">,</text>
+                </section>
+
+                <section y="14%" x="4%">
+                    <text class="CPaneCodeBlue" y="0%" x="0%" id="timeText">"time"</text>
+                    <text class="CPaneCodeWhite" y="0%" x="16%+3">:</text>
+                    <text class="CPaneCodeOrange" y="0%" x="16%+13" id="timeElem"/>
+                    <text class="CPaneCodeWhite" y="0%" id="timeComma">,</text>
+                </section>
+
+                <section y="21%" x="4%">
+                    <text class="CPaneCodeBlue" y="0%" x="0%">"stats"</text>
+                    <text class="CPaneCodeWhite" y="0%" x="18%+2">:</text>
+                    <text class="CPaneCodeWhiteBrace" y="0%" x="18%+12">{</text>
+                </section>
+
+                <section y="28%" x="10%">
+                    <text class="CPaneCodeBlue" y="0%" x="0%" id="heartText">"hr"</text>
+                    <text class="CPaneCodeWhite" y="0%" x="9%+3">:</text>
+                    <text class="CPaneCodeOrange" y="0%" x="9%+13" id="heartElem"/>
+                    <text class="CPaneCodeWhite" y="0%" id="heartComma">,</text>
+                </section>
+
+                <section y="35%" x="10%">
+                    <text class="CPaneCodeBlue" y="0%" x="0%" id="stepsText">"steps"</text>
+                    <text class="CPaneCodeWhite" y="0%" x="19%+2">:</text>
+                    <text class="CPaneCodeOrange" y="0%" x="19%+12" id="stepsElem"/>
+                    <text class="CPaneCodeWhite" y="0%" id="stepsComma">,</text>
+                </section>
+
+                <section y="42%" x="10%">
+                    <text class="CPaneCodeBlue" y="0%" x="0%" id="distanceText">"distance"</text>
+                    <text class="CPaneCodeWhite" y="0%" x="27%+3">:</text>
+                    <text class="CPaneCodeOrange" y="0%" x="27%+13" id="distanceElem"/>
+                    <text class="CPaneCodeWhite" y="0%" id="distanceComma">,</text>
+                </section>
+
+
+                <section y="49%" x="10%">
+                    <text class="CPaneCodeBlue" y="0%" x="0%" id="AZMText">"azm"</text>
+                    <text class="CPaneCodeWhite" y="0%" x="15%+3">:</text>
+                    <text class="CPaneCodeOrange" y="0%" x="15%+13" id="AZMElem"/>
+                    <text class="CPaneCodeWhite" y="0%" id="AZMComma">,</text>
+                </section>
+
+                <section y="56%" x="10%">
+                    <text class="CPaneCodeBlue" y="0%" x="0%" id="floorsText">"floors"</text>
+                    <text class="CPaneCodeWhite" y="0%" x="20%+2">:</text>
+                    <text class="CPaneCodeOrange" y="0%" x="20%+12" id="floorsElem"/>
+                    <text class="CPaneCodeWhite" y="0%" id="floorsComma">,</text>
+                </section>
+
+                <section y="63%" x="10%">
+                    <text class="CPaneCodeBlue" y="0%" x="0%">"calories"</text>
+                    <text class="CPaneCodeWhite" y="0%" x="25%+3">:</text>
+                    <text class="CPaneCodeOrange" y="0%" x="25%+13" id="caloriesElem"/>
+                </section>
+
+                <section y="70%" x="4%">
+                    <text class="CPaneCodeWhiteBrace" y="0%" x="0%">}</text>
+                    <text class="CPaneCodeWhite" y="0%" x="0%+10">,</text>
+                </section>
+
+                <section y="77%" x="4%">
+                    <text class="CPaneCodeBlue" y="0%" x="0%">"battery"</text>
+                    <text class="CPaneCodeWhite" y="0%" x="24%+3">:</text>
+                    <text class="CPaneCodeOrange" y="0%" x="24%+13" id="batteryElem"/>
+                </section>
+
+                <text class="CPaneCodeWhiteBrace" y="84%" x="0%">}</text>
+
             </section>
 
-            <section y="21%" x="4%">
-                <text class="CPaneCodeBlue" y="0%" x="0%">"stats"</text>
-                <text class="CPaneCodeWhite" y="0%" x="18%+2">:</text>
-                <text class="CPaneCodeWhiteBrace" y="0%" x="18%+12">{</text>
-            </section>
-
-            <section y="28%" x="10%">
-                <text class="CPaneCodeBlue" y="0%" x="0%" id="heartText">"hr"</text>
-                <text class="CPaneCodeWhite" y="0%" x="9%+3">:</text>
-                <text class="CPaneCodeOrange" y="0%" x="9%+13" id="heartElem"/>
-                <text class="CPaneCodeWhite" y="0%" id="heartComma">,</text>
-            </section>
-
-            <section y="35%" x="10%">
-                <text class="CPaneCodeBlue" y="0%" x="0%" id="stepsText">"steps"</text>
-                <text class="CPaneCodeWhite" y="0%" x="19%+2">:</text>
-                <text class="CPaneCodeOrange" y="0%" x="19%+12" id="stepsElem"/>
-                <text class="CPaneCodeWhite" y="0%" id="stepsComma">,</text>
-            </section>
-
-            <section y="42%" x="10%">
-                <text class="CPaneCodeBlue" y="0%" x="0%" id="distanceText">"distance"</text>
-                <text class="CPaneCodeWhite" y="0%" x="27%+3">:</text>
-                <text class="CPaneCodeOrange" y="0%" x="27%+13" id="distanceElem"/>
-                <text class="CPaneCodeWhite" y="0%" id="distanceComma">,</text>
-            </section>
-
-
-            <section y="49%" x="10%">
-                <text class="CPaneCodeBlue" y="0%" x="0%" id="AZMText">"azm"</text>
-                <text class="CPaneCodeWhite" y="0%" x="15%+3">:</text>
-                <text class="CPaneCodeOrange" y="0%" x="15%+13" id="AZMElem"/>
-                <text class="CPaneCodeWhite" y="0%" id="AZMComma">,</text>
-            </section>
-
-            <section y="56%" x="10%">
-                <text class="CPaneCodeBlue" y="0%" x="0%" id="floorsText">"floors"</text>
-                <text class="CPaneCodeWhite" y="0%" x="20%+2">:</text>
-                <text class="CPaneCodeOrange" y="0%" x="20%+12" id="floorsElem"/>
-                <text class="CPaneCodeWhite" y="0%" id="floorsComma">,</text>
-            </section>
-
-            <section y="63%" x="10%">
-                <text class="CPaneCodeBlue" y="0%" x="0%">"calories"</text>
-                <text class="CPaneCodeWhite" y="0%" x="25%+3">:</text>
-                <text class="CPaneCodeOrange" y="0%" x="25%+13" id="caloriesElem"/>
-            </section>
-
-            <section y="70%" x="4%">
-                <text class="CPaneCodeWhiteBrace" y="0%" x="0%">}</text>
-                <text class="CPaneCodeWhite" y="0%" x="0%+10">,</text>
-            </section>
-
-            <section y="77%" x="4%">
-                <text class="CPaneCodeBlue" y="0%" x="0%">"battery"</text>
-                <text class="CPaneCodeWhite" y="0%" x="24%+3">:</text>
-                <text class="CPaneCodeOrange" y="0%" x="24%+13" id="batteryElem"/>
-            </section>
-
-
-            <text class="CPaneCodeWhiteBrace" y="84%" x="0%">}</text>
-
-        </section>
+            <animate attributeName="opacity" from="1" to="0" dur="0.1" begin="enable"/>
+            <animate attributeName="opacity" from="0" to="1" dur="0.3" begin="disable"/>
+        </g>
 
     </section>
+
+    <section>
+        <g class="zeroOpacity">
+            <section id="CPaneNumberPanelSolo">
+                <text class="CPaneNumberSolo" y="0%">1</text>
+                <text class="CPaneNumberSolo" y="13%">2</text>
+                <text class="CPaneNumberSolo" y="26%">3</text>
+                <text class="CPaneNumberSolo" y="39%">4</text>
+                <text class="CPaneNumberSolo" y="52%">5</text>
+                <text class="CPaneNumberSolo" y="65%">6</text>
+            </section>
+
+            <section id="CPaneSoloTime">
+                <text class="CPaneCodeWhiteBraceSolo" y="0%" x="12%">{</text>
+
+                <section y="13%" x="18%+1">
+                    <text class="CPaneCodeBlueSolo" y="0%" x="0%" id="sTime1Text">"h"</text>
+                    <text class="CPaneCodeWhiteSolo" y="0%" x="14%">:</text>
+                    <text class="CPaneCodeOrangeSolo"  y="0%" x="18%" id="sTimeSplit1" />
+                    <text class="CPaneCodeWhiteSolo" y="0%" id="sTime1Comma">,</text>
+                </section>
+
+                <section y="26%" x="18%+1">
+                    <text class="CPaneCodeBlueSolo" y="0%" x="0%" id="sTime2Text">"m"</text>
+                    <text class="CPaneCodeWhiteSolo" y="0%" x="17%-2">:</text>
+                    <text class="CPaneCodeOrangeSolo"  y="0%" x="21%-2" id="sTimeSplit2" />
+                    <text class="CPaneCodeWhiteSolo" y="0%" id="sTime2Comma">,</text>
+                </section>
+
+                <section y="39%" x="18%+1">
+                    <text class="CPaneCodeBlueSolo" y="0%" x="0%" id="sTimeDateText">"d"</text>
+                    <text class="CPaneCodeWhiteSolo" y="0%" x="14%">:</text>
+                    <text class="CPaneCodeOrangeSolo"  y="0%" x="18%" id="sTimeDate" />
+                    <text class="CPaneCodeWhiteSolo" y="0%" id="sTimeDateComma">,</text>
+                </section>
+
+                <section y="52%" x="18%+1">
+                    <text class="CPaneCodeBlueSolo" y="0%" x="0%">"b"</text>
+                    <text class="CPaneCodeWhiteSolo" y="0%" x="14%">:</text>
+                    <text class="CPaneCodeOrangeSolo"  y="0%" x="18%" id="sTimeBattery" />
+                </section>
+
+                <text class="CPaneCodeWhiteBraceSolo" y="65%" x="12%">}</text>
+
+            </section>
+
+
+            <animate attributeName="opacity" from="0" to="1" dur="0.3" begin="enable"/>
+            <animate attributeName="opacity" from="1" to="0" dur="0.1" begin="disable"/>
+        </g>
+    </section>
+
+    <rect id="clickable"/>
 
 </svg>

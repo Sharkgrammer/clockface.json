@@ -3,6 +3,9 @@ import * as clock from "./simple/clock";
 import * as activity from "./simple/activity";
 import * as hrm from "./simple/hrm";
 
+const TPaneText = document.getElementById("TPaneText");
+TPaneText.text = "clockface.json";
+
 /**
  * Datetime code
  */
@@ -17,12 +20,17 @@ const dateText = document.getElementById("dateText");
 const batteryElem = document.getElementById("batteryElem");
 
 function clockCallback(data) {
-    timeElem.text = `"${data.time}"`;
-    dateElem.text = `"${data.date.toLowerCase()}"`;
-    batteryElem.text = `"${data.power.battery}%"`;
 
-    dateComma.x = dateText.getBBox().width + dateElem.getBBox().width + 10;
-    timeComma.x = timeText.getBBox().width + timeElem.getBBox().width + 10;
+    if (showSoloTime) {
+        handleSTime(`"${data.time}"`, `"${data.date.toLowerCase()}"`, `"${data.power.battery}%"`)
+    } else {
+        timeElem.text = `"${data.time}"`;
+        dateElem.text = `"${data.date.toLowerCase()}"`;
+        batteryElem.text = `"${data.power.battery}%"`;
+
+        dateComma.x = dateText.getBBox().width + dateElem.getBBox().width + 10;
+        timeComma.x = timeText.getBBox().width + timeElem.getBBox().width + 10;
+    }
 }
 
 clock.initialize("minutes", "shortDate", clockCallback);
@@ -71,6 +79,7 @@ activity.initialize("seconds", activityCallback);
 const heartElem = document.getElementById("heartElem");
 const heartComma = document.getElementById("heartComma");
 const heartText = document.getElementById("heartText");
+
 function hrmCallback(data) {
     let hr = data.bpm;
     if (hr === null) hr = "--";
@@ -80,3 +89,62 @@ function hrmCallback(data) {
 }
 
 hrm.initialize(hrmCallback);
+
+const screen = document.getElementById("screen");
+const clickable = document.getElementById("clickable");
+
+let showSoloTime = false;
+
+clickable.addEventListener("click", (evt) => {
+    if (showSoloTime) {
+        screen.animate("disable");
+        TPaneText.text = "clockface.json";
+
+    } else {
+        screen.animate("enable");
+        TPaneText.text = "clockonly.json";
+
+        handleSTime(timeElem.text, dateElem.text, batteryElem.text)
+    }
+
+    showSoloTime = !showSoloTime;
+});
+
+const sTimeSplit1 = document.getElementById("sTimeSplit1");
+const sTime1Comma = document.getElementById("sTime1Comma");
+const sTime1Text = document.getElementById("sTime1Text");
+
+const sTimeSplit2 = document.getElementById("sTimeSplit2");
+const sTime2Comma = document.getElementById("sTime2Comma");
+const sTime2Text = document.getElementById("sTime2Text");
+
+const sTimeDate = document.getElementById("sTimeDate");
+const sTimeDateComma = document.getElementById("sTimeDateComma");
+const sTimeDateText = document.getElementById("sTimeDateText");
+
+const sTimeBattery = document.getElementById("sTimeBattery");
+
+function handleSTime(time, date, batt) {
+    // Its easier apparently to remove each end of the strings
+    // rather than try and replace the " with nothing.
+    let sTime = time.slice(1, -1).split(":");
+
+    // Set Time/Date/Battery
+    sTimeSplit1.text = `"${sTime[0]}"`;
+    sTimeSplit2.text = `"${sTime[1]}"`;
+    sTimeDate.text = '"' + date.split(",")[1].slice(1);
+    sTimeBattery.text = batt;
+
+    // Set Commas X pos
+    sTime1Comma.x = sTime1Text.getBBox().width + sTimeSplit1.getBBox().width + 12;
+    sTime2Comma.x = sTime2Text.getBBox().width + sTimeSplit2.getBBox().width + 12;
+    sTimeDateComma.x = sTimeDateText.getBBox().width + sTimeDate.getBBox().width + 12;
+}
+
+
+
+
+
+
+
+

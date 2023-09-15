@@ -68,10 +68,11 @@
   fill: #626269;
   font-size: 20;
   text-anchor: end;
+  opacity: 0.6;
 }
 
 /*noinspection ALL*/
-#CPaneCodePanel {
+#CPaneCodePanel{
   x: 21%;
   y: 8%;
 }
@@ -112,7 +113,6 @@
   text-anchor: start;
 }
 
-
 /*noinspection ALL*/
 #datetime{
   x: 30%;
@@ -128,4 +128,77 @@
 
 .hidden {
   visibility: hidden;
+}
+
+.zeroOpacity{
+  opacity: 0;
+}
+
+/*noinspection ALL*/
+#CPaneNumberPanelSolo {
+  x: 17%;
+  y: 24%;
+}
+
+/*noinspection ALL*/
+.CPaneNumberSolo {
+  x: 0%;
+  font-family: System-Bold;
+  text-length: 2;
+  fill: #626269;
+  font-size: 45;
+  text-anchor: end;
+  opacity: 0.6;
+}
+
+/*noinspection ALL*/
+#CPaneSoloTime{
+  x: 8%;
+  y: 23%;
+}
+
+/*noinspection ALL*/
+.CPaneCodeWhiteBraceSolo {
+  font-family: System-Bold;
+  text-length: 2;
+  fill: white;
+  font-size: 38;
+  text-anchor: start;
+}
+
+/*noinspection ALL*/
+.CPaneCodeWhiteSolo {
+  font-family: System-Bold;
+  text-length: 2;
+  fill: white;
+  font-size: 38;
+  text-anchor: start;
+}
+
+/*noinspection ALL*/
+.CPaneCodeBlueSolo {
+  font-family: System-Bold;
+  text-length: 15;
+  fill: #9cdcfe;
+  font-size: 38;
+  text-anchor: start;
+}
+
+/*noinspection ALL*/
+.CPaneCodeOrangeSolo {
+  font-family: System-Bold;
+  text-length: 20;
+  fill: #ce9178;
+  font-size: 38;
+  text-anchor: start;
+}
+
+/*noinspection ALL*/
+#clickable {
+  x: 0;
+  y: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: visible;
+  opacity: 0;
 }
