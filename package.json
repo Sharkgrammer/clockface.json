@@ -8,7 +8,6 @@
     "@fitbit/sdk-cli": "~1.8.0-pre.10"
   },
   "fitbit": {
-    "appUUID": "74a1aee7-457c-441e-9e93-ed17a18b01df",
     "appType": "clockface",
     "appDisplayName": "clockface.json",
     "iconFile": "resources/icon.png",
@@ -23,7 +22,8 @@
       "hera"
     ],
     "i18n": {},
-    "defaultLanguage": "en-US"
+    "defaultLanguage": "en-US",
+    "appUUID": "fe0e7b34-0e50-4b02-8b3f-1dbaeb6fe672"
   },
   "scripts": {
     "build": "fitbit-build",
